@@ -46,6 +46,10 @@
   margin: 1em 0;
 }
 
+.csv-editor-container {
+  height: 100%;
+}
+
 .csv-table {
   border-collapse: collapse;
   width: 100%;

@@ -265,7 +265,6 @@ class CSVFileView extends TextFileView {
         
         // Add click handler
         th.addEventListener('click', () => this.sortTable(index));
-        th.style.cursor = 'pointer';
       });
       
       // Data rows
@@ -318,23 +317,16 @@ class CSVFileView extends TextFileView {
         parent: editorDiv
       });
       
-      editorDiv.style.height = '100%';
     }
   }
 }
 
 module.exports = class RainbowCSVPlugin extends Plugin {
   async onload() {
-    console.log('Rainbow CSV v0.1.0 loaded');
-    
     // Register custom view for CSV files
     this.registerView('csv-view', (leaf) => new CSVFileView(leaf, this));
     
     // Register CSV extension
     this.registerExtensions(['csv'], 'csv-view');
-  }
-  
-  onunload() {
-    console.log('Rainbow CSV unloaded');
   }
 };
